@@ -34,7 +34,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve-json": "json-server --watch db.json --port 4000",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "eslint": "eslint 'src/**/*{.js,.jsx}'",
+    "eslint:fix": "eslint --fix 'src/**/*{.js,.jsx}'",
+    "prettier:fix": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
@@ -51,6 +55,12 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "resetMocks": false,
+    "snapshotSerializers": [
+      "@emotion/jest/serializer"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -71,6 +81,7 @@
     ]
   },
   "devDependencies": {
+    "@emotion/jest": "^11.8.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.4.0",
@@ -79,8 +90,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.0",
     "lint-staged": "^12.3.6",
-    "prettier": "^2.6.0",
-    "husky": "^7.0.0"
+    "prettier": "^2.6.0"
   }
 }
