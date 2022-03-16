@@ -20,13 +20,17 @@ const Contacts = () => {
       const mappedQueryParams = {
         _page: filters.page,
         _limit: filters.itemsPerPage,
-        search: filters.search
+        q: filters.search
       };
+
+      console.log(mappedQueryParams);
 
       return ContactService.list(mappedQueryParams);
     },
     { refetchOnWindowFocus: true, refetchOnMount: true }
   );
+
+  console.log(data);
 
   return (
     <div>
@@ -34,8 +38,8 @@ const Contacts = () => {
         setFilters={setFilters}
         search={filters.search}
         page={filters.page}
-        totalPage={data.totalPage}
-        data={data.data}
+        totalPage={data?.totalPage}
+        data={data?.data}
         isLoading={isLoading}
       />
     </div>
