@@ -19,7 +19,7 @@ api.interceptors.request.use((config) => {
 });
 
 api.interceptors.response.use(
-  (response) => response.data.data,
+  (response) => ({ data: response.data, totalCount: response.headers['x-total-count'] }),
   (error) => {
     const errorDetails = {
       status: error.response?.data.errors.status,

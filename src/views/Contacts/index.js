@@ -8,7 +8,7 @@ import ContactService from 'services/Contacts';
 const Contacts = () => {
   const { filters, setFilters } = useListingTable({
     search: '',
-    itemsPerPage: '10',
+    itemsPerPage: 10,
     page: 1
   });
 
@@ -18,8 +18,8 @@ const Contacts = () => {
     ['contacts', queryParams],
     () => {
       const mappedQueryParams = {
-        page: filters.page,
-        page_limit: filters.itemsPerPage,
+        _page: filters.page,
+        _limit: filters.itemsPerPage,
         search: filters.search
       };
 
@@ -30,7 +30,14 @@ const Contacts = () => {
 
   return (
     <div>
-      <ThumbnailList />
+      <ThumbnailList
+        setFilters={setFilters}
+        search={filters.search}
+        page={filters.page}
+        totalPage={data.totalPage}
+        data={data.data}
+        isLoading={isLoading}
+      />
     </div>
   );
 };

@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import useDebounce from 'hooks/useDebounce';
 import { useNavigate } from 'react-router-dom';
 
-export default function useListingTable({ filterProps }) {
+export default function useListingTable(filterProps) {
   const navigate = useNavigate();
   const [filters, setFilters] = useState(
     filterProps || {
-      search: ''
+      search: '',
+      itemsPerPage: 10,
+      page: 1
     }
   );
 
