@@ -32,6 +32,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage --silent --passWithNoTests --watchAll=false",
     "eject": "react-scripts eject",
     "serve-json": "json-server --watch db.json --port 4000",
     "prepare": "husky install",
@@ -90,6 +91,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "react-test-renderer": "^17.0.2",
+    "mini-css-extract-plugin": "2.4.5",
     "husky": "^7.0.0",
     "lint-staged": "^12.3.6",
     "prettier": "^2.6.0"
