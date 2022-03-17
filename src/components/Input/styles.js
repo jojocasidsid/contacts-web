@@ -19,9 +19,9 @@ export const StyledLabel = styled(InputLabel)`
   //has error
   color: ${({ theme, error }) => {
     if (error) {
-      return theme?.palette.error.main;
+      return theme.palette.error.main;
     }
-    return theme?.palette.colors.inputLabel;
+    return theme.palette.primary.main;
   }};
   & span {
     color: ${({ theme }) => theme.palette.error.main};

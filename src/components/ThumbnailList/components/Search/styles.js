@@ -2,8 +2,9 @@ import TextField from '@mui/material/TextField';
 import styled from '@emotion/styled';
 
 export const StyledTextField = styled(TextField)`
+  margin-bottom: 20px;
   .MuiInput-root {
-    border: 1px solid #30364333;
+    border: 1px solid ${({ theme }) => theme.palette.primary.main};
     border-radius: 2px;
     padding-left: 16px;
     min-width: 230px;

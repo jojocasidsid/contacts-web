@@ -1,6 +1,7 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { Box, Toolbar } from '@mui/material';
+import { Link, Outlet } from 'react-router-dom';
+import { Box, Button, Toolbar } from '@mui/material';
+import URLHelpers from 'helper/url';
 import { StyledImage, StyledAppBar, StyledWrapper } from './styles';
 
 const Main = () => (
@@ -10,9 +11,11 @@ const Main = () => (
         <Toolbar disableGutters>
           <StyledImage className="image" src="https://deltek.com/favicon.ico" alt="logo" />
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} />
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} />
+          <Box sx={{ marginLeft: 2, flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
+            <Button color="info" component={Link} to={URLHelpers.contacts}>
+              Contacts
+            </Button>
+          </Box>
 
           <Box sx={{ flexGrow: 0, mr: 2 }} />
 

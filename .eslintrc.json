@@ -46,6 +46,7 @@
     "prefer-template": "off",
     "dot-notation": "off",
     "camelcase": "warn",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }

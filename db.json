@@ -1,12 +1,6 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "name": "Jojo Casidsid",
-      "phone": "+639222222222",
-      "email": "jvcasidsid2013@gmail.com"
-    },
-    {
       "id": 2,
       "name": "John Doe",
       "phone": "+639333333333",
@@ -37,12 +31,6 @@
       "email": "jvcasidsid2013@gmail.com"
     },
     {
-      "id": 7,
-      "name": "John Doe",
-      "phone": "+639333333333",
-      "email": "johndoe@gmail.com"
-    },
-    {
       "id": 8,
       "name": "Jane Doe",
       "phone": "+639444444444",
@@ -71,6 +59,12 @@
       "name": "William Doe",
       "phone": "+63666666666",
       "email": "wdoe@gmail.com"
+    },
+    {
+      "name": "Maria Doe",
+      "phone": "902-312-2222",
+      "email": "MDoe@gmail.com",
+      "id": 13
     }
   ]
 }

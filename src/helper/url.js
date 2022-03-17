@@ -9,8 +9,9 @@ export const contactsHelper = () => {
   const baseURL = URLHelpers.contacts;
 
   return {
+    addContacts: () => '/contacts/add',
     viewContacts: (id) => `${baseURL}/${id}`,
-    editContacts: (id) => `${baseURL}/eidt/${id}`
+    editContacts: (id) => `${baseURL}/edit/${id}`
   };
 };
 

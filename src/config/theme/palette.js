@@ -14,6 +14,9 @@ const exportColors = {
   secondary: {
     main: black
   },
+  info: {
+    main: white
+  },
   text: {
     primary: black,
     secondary: '#B5B5B5'
