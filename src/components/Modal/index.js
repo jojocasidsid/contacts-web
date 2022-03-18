@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Dialog, DialogProps } from '@mui/material';
+import { Dialog } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import {
   StyledIconButton,

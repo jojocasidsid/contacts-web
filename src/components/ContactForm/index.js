@@ -1,32 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Button, CircularProgress, Grid, Paper } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import MaskedInput from 'components/Input/MaskedInput';
 import Input from 'components/Input';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ContactService from 'services/Contacts';
-import { useQuery } from 'react-query';
-import URLHelpers, { contactsHelper } from 'helper/url';
+
+import URLHelpers from 'helper/url';
 import { defaultValues as defaultFormValues, validationSchema } from './schema';
 
-const ContactForm = ({ mode }) => {
+const ContactForm = ({ id, mode, data, refetch }) => {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
-  const path = contactsHelper();
-
-  const { id } = useParams();
-
-  const { isLoading, error, data, refetch } = useQuery(
-    ['contacts', id],
-    () => ContactService.get(id),
-    {
-      refetchOnWindowFocus: true,
-      refetchOnMount: true,
-      enabled: !!id
-    }
-  );
 
   const defaultValues = data ? data.data : defaultFormValues;
 
@@ -34,7 +21,7 @@ const ContactForm = ({ mode }) => {
     handleSubmit,
     control,
 
-    formState: { errors, isDirty }
+    formState: { errors }
   } = useForm({
     mode: 'onChanged',
     defaultValues,
@@ -59,21 +46,13 @@ const ContactForm = ({ mode }) => {
           { variant: 'success' }
         );
         navigate(URLHelpers.contacts);
-        refetch();
+        if (!isAdding) refetch();
       })
       .catch(() => {
         enqueueSnackbar(`Encountered an error`, { variant: 'error' });
         setSubmitting(false);
       });
   };
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Something Went Wrong...</div>;
-  }
 
   return (
     <Paper sx={{ padding: '20px' }}>
