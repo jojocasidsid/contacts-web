@@ -23,7 +23,8 @@ const ContactForm = ({ id, mode, data, refetch }) => {
 
     formState: { errors }
   } = useForm({
-    mode: 'onChanged',
+    mode: 'all',
+    reValidateMode: 'onChange',
     defaultValues,
     resolver: yupResolver(validationSchema)
   });

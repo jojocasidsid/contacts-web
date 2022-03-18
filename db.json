@@ -8,9 +8,10 @@
     },
     {
       "id": 3,
-      "name": "Jane Doe",
-      "phone": "+639444444444",
-      "email": "janedoe@gmail.com"
+      "name": "Jane Does",
+      "phone": "903-212-2223",
+      "email": "janedoe@gmail.com",
+      "_method": "PUT"
     },
     {
       "id": 4,
